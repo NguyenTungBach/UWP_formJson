@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\HocWeb\Universal app\BT_universal_app\formJson\formJson\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-12T12:59:43.917</Modified>
+      <Modified>2022-01-12T14:34:56.003</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\formJson\formJson\bin\x86\Debug\formJson.exe">
       <PackagePath>entrypoint\formJson.exe</PackagePath>
-      <Modified>2022-01-12T12:59:43.480</Modified>
+      <Modified>2022-01-12T14:34:53.853</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\z\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -94,11 +94,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\formJson\formJson\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-01-12T12:59:43.402</Modified>
+      <Modified>2022-01-12T14:26:58.615</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\formJson\formJson\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-01-12T12:59:43.402</Modified>
+      <Modified>2022-01-12T14:26:58.615</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -110,7 +110,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\formJson\formJson\bin\x86\Debug\Core\formJson.exe">
       <PackagePath>formJson.exe</PackagePath>
-      <Modified>2022-01-12T12:59:43.917</Modified>
+      <Modified>2022-01-12T14:34:56.000</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

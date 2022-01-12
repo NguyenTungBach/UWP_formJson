@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -33,6 +34,18 @@ namespace formJson
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(84|0[3|5|7|8|9])+([0-9]{8})$").Success;
+
+        }
+
+        public static bool IsEmail(string email)
+        {
+            string pattern = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
+            return Regex.IsMatch(email, pattern);
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -76,8 +89,18 @@ namespace formJson
             }
             else
             {
-                lbValidPhone.Visibility = Visibility.Collapsed;
-                validateCheck = false;
+                if (!IsPhoneNumber(Phone))
+                {
+                    lbValidPhone.Text = "Đây không phải số điện thoại";
+                    lbValidPhone.Visibility = Visibility.Visible;
+                    validateCheck = true;
+                }
+                else
+                {
+                    lbValidPhone.Text = "Hãy nhập số điện thoại";
+                    lbValidPhone.Visibility = Visibility.Collapsed;
+                    validateCheck = false;
+                }
             }
             if (Avatar == "" || Avatar == null)
             {
@@ -109,6 +132,26 @@ namespace formJson
                 lbValidAddress.Visibility = Visibility.Collapsed;
                 validateCheck = false;
             }
+            if (Email == "" || Email == null)
+            {
+                lbValidEmail.Visibility = Visibility.Visible;
+                validateCheck = true;
+            }
+            else
+            {
+                if (!IsEmail(Email))
+                {
+                    lbValidEmail.Text = "Đây không phải là email";
+                    lbValidEmail.Visibility = Visibility.Visible;
+                    validateCheck = true;
+                }
+                else
+                {
+                    lbValidEmail.Text = "Hãy nhập email";
+                    lbValidEmail.Visibility = Visibility.Collapsed;
+                    validateCheck = false;
+                }
+            }
             if (Introduction == "" || Introduction == null)
             {
                 lbValidIntroduct.Visibility = Visibility.Visible;
@@ -137,16 +180,6 @@ namespace formJson
             else
             {
                 lbValidBirthday.Visibility = Visibility.Collapsed;
-                validateCheck = false;
-            }
-            if (Email == "" || Email == null)
-            {
-                lbValidEmail.Visibility = Visibility.Visible;
-                validateCheck = true;
-            }
-            else
-            {
-                lbValidEmail.Visibility = Visibility.Collapsed;
                 validateCheck = false;
             }
         }
